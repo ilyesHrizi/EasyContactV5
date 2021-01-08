@@ -61,6 +61,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class PostDetailActivity extends AppCompatActivity {
     Dialog popAddPost ;
@@ -189,7 +191,28 @@ public class PostDetailActivity extends AppCompatActivity {
         setupPopupImageClick();
 
     }
+    public String ValidateFieldString(String title , String Description,String photo ){
 
+        if (title.isEmpty())
+        {
+            return "title is empty ";
+
+        }
+        else if (Description.isEmpty())
+        {
+            return "description is empty ";
+
+        }
+        else if (photo.isEmpty())
+        {
+            return "photo ";
+
+        }
+        else
+        {
+            return "valid field post will add with this parameter is input";
+        }
+    }
     private void iniRvComment() {
 
         RvComment.setLayoutManager(new LinearLayoutManager(this));

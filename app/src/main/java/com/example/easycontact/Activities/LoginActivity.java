@@ -21,6 +21,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     Button btnLogin;
     ProgressBar loginProgress;
@@ -29,7 +32,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     FirebaseAuth mFirebase;
     private FirebaseAuth.AuthStateListener mAuthL;
     private Intent HomeActivity;
-
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,7 +86,37 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         });
     }
 
+public String ValidateFieldString(String Email , String Password){
+    Pattern pattern = Pattern.compile(emailPattern);
+    Matcher matcher = pattern.matcher(Email);
+    Integer CheckPassword = Integer.parseInt(Password);
+        if (Email.isEmpty())
+        {
+            return "email is empty";
 
+        }
+        else if (!(matcher.matches()))
+        {
+            return "invalid Email";
+
+        }
+        else if (Password.isEmpty())
+        {
+            return "password is empty";
+
+        }
+        else if (Password.length()!=8)
+        {
+            return "password is invalid should have 8 caraccter";
+        }
+        else if (CheckPassword<0){
+            return "password should get only number";
+        }
+        else
+        {
+            return "valid field for login";
+        }
+}
     private void showMessage(String text) {
 
         Toast.makeText(getApplicationContext(),text,Toast.LENGTH_LONG).show();

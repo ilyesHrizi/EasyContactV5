@@ -45,6 +45,8 @@ import com.google.firebase.storage.UploadTask;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class RegisterUser extends AppCompatActivity {
     EditText Cin,Email,Name,Lastname;
@@ -58,7 +60,7 @@ public class RegisterUser extends AppCompatActivity {
     Uri pickedImage;
     String photo;
     Map<String,String> taskMap;
-    String emailPattern = "[a-z0-9]+@[a-z]+\\.+[a-z]+";
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,7 +111,48 @@ public class RegisterUser extends AppCompatActivity {
             }
         });
     }
+    public String ValidateFieldString(String name , String lastname ,String Email , String Password){
+        Pattern pattern = Pattern.compile(emailPattern);
+        Matcher matcher = pattern.matcher(Email);
+        Integer CheckPassword = Integer.parseInt(Password);
+        if (name.isEmpty())
+        {
+            return "name  is empty";
 
+        }
+        else if (lastname.isEmpty())
+        {
+            return "last name is empty";
+
+        }
+
+        else if (Email.isEmpty())
+        {
+            return "email is empty";
+
+        }
+        else if (!(matcher.matches()))
+        {
+            return "invalid Email";
+
+        }
+        else if (Password.isEmpty())
+        {
+            return "password is empty";
+
+        }
+        else if (Password.length()!=8)
+        {
+            return "password is invalid should have 8 caraccter";
+        }
+        else if (CheckPassword<0){
+            return "password should get only number";
+        }
+        else
+        {
+            return "valid field for register";
+        }
+    }
     private void updateUserInfo(  Uri pickedImgUri, final FirebaseUser currentUser) {
         BtnRegister.setVisibility(View.INVISIBLE);
         loadingProgress.setVisibility(View.VISIBLE);
