@@ -169,7 +169,8 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme1.PopupOverlay"
             tools:layout_editor_absoluteX="-4dp"
-            tools:layout_editor_absoluteY="7dp" />
+            tools:layout_editor_absoluteY="7dp"
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
