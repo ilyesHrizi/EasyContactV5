@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "622575127868",
+    "firebase_url": "https://easycontact-8832d.firebaseio.com",
+    "project_id": "easycontact-8832d",
+    "storage_bucket": "easycontact-8832d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622575127868:android:7670a9cd3813986b4e6239",
+        "android_client_info": {
+          "package_name": "com.example.easycontact"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "622575127868-o8bq926fuj2b4t9ekhc1p0443ulk488a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.easycontact",
+            "certificate_hash": "3d317447d342ea6034c051e85d3357edb021ac38"
+          }
+        },
+        {
+          "client_id": "622575127868-dmth6lcm6fpkpmhej1tc0hu2sm3jrqdg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC35Sn3X4hzq9fYrN3J3saef1Dix2nFiyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "622575127868-dmth6lcm6fpkpmhej1tc0hu2sm3jrqdg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
