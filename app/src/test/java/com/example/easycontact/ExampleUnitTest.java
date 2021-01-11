@@ -30,7 +30,7 @@ public class ExampleUnitTest {
         LoginActivity myObjectUnderTest = new LoginActivity();
 
         // ...when the string is returned from the object under test...
-        String result = myObjectUnderTest.ValidateFieldString("useruse55656554r@gmail.com","13262801");
+        String result = myObjectUnderTest.ValidateFieldString("useruse556r@gmail.com","13262801");
 
         // ...then the result should be the expected one.
         assertThat(result, is("valid field for login"));
