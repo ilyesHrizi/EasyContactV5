@@ -213,6 +213,12 @@ public class PostDetailActivity extends AppCompatActivity {
             return "valid field post will add with this parameter is input";
         }
     }
+    public String VerifyList(List<Post> PostList){
+        if(PostList.isEmpty())
+            return "List empty";
+        else
+            return "list not empty";
+    }
     private void iniRvComment() {
 
         RvComment.setLayoutManager(new LinearLayoutManager(this));

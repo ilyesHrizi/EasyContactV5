@@ -44,6 +44,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -152,6 +153,17 @@ public class RegisterUser extends AppCompatActivity {
         {
             return "valid field for register";
         }
+    }
+    public String checkUserExist(List<user> users , String Email){
+        String result ="email exist you can't Register";
+        for(int i= 0 ;i<users.size();i++){
+            if(users.get(i).getEmail().equals(Email))
+            {
+                result= "email not exist register complete";
+            }
+
+        }
+        return result;
     }
     private void updateUserInfo(  Uri pickedImgUri, final FirebaseUser currentUser) {
         BtnRegister.setVisibility(View.INVISIBLE);

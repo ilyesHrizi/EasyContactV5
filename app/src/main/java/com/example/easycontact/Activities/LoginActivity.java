@@ -20,7 +20,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.auth.User;
 
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -116,6 +118,16 @@ public String ValidateFieldString(String Email , String Password){
         {
             return "valid field for login";
         }
+}
+public String checkUserExist(List<user> users ,String Email){
+        String result ="email not exist";
+        for(int i= 0 ;i<users.size();i++){
+            if(users.get(i).getEmail().equals(Email))
+            {
+                result= "email exist you can login";
+            }
+                }
+        return result;
 }
     private void showMessage(String text) {
 
