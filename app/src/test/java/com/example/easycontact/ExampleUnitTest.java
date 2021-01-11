@@ -93,7 +93,7 @@ public class ExampleUnitTest {
         listUser.add(u2);
         listUser.add(u3);
         RegisterUser registerUser = new RegisterUser();
-        String result = registerUser.checkUserExist(listUser,"ilyeshrizi@gmail.com");
+        String result = registerUser.checkUserExist(listUser,"ilyeschrizi@gmail.com");
         assertThat(result,is("email not exist register complete"));
     }
 }
